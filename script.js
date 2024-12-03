@@ -71,6 +71,13 @@ const songs = [
     updateQueue(); // Update the queue display
   }
   
+  // Automatically play the next song when the current one ends
+  karaokeVideo.addEventListener("ended", () => {
+    if (songQueue.length > 0) {
+      playNextSong();
+    }
+  });
+  
   // Add event listeners
   addToQueueButton.addEventListener("click", addSongToQueue);
   playNextButton.addEventListener("click", playNextSong);
