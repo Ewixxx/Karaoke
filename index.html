@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karaoke Website</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Karaoke Playlist</h1>
-    </header>
-    <div class="karaoke-container">
-      <!-- Sidebar for static song list -->
-      <aside class="song-list">
-        <h2>Available Songs</h2>
-        <ul id="song-list">
-          <!-- Static song list will be populated here -->
-        </ul>
-      </aside>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karaoke Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Karaoke Playlist</h1>
+      </header>
+      <div class="karaoke-container">
+        <!-- Sidebar for static song list -->
+        <aside class="song-list">
+          <h2>Available Songs</h2>
+          <ul id="song-list">
+            <!-- Static song list will be populated here -->
+          </ul>
+        </aside>
 
-      <!-- Main player and queue -->
-      <main class="player-container">
-        <!-- Search Bar -->
-        <div class="search-bar">
-          <input type="text" id="song-search" placeholder="Enter song number (e.g., 001)">
-          <button id="add-to-queue">Add to Queue</button>
-        </div>
+        <!-- Main player and queue -->
+        <main class="player-container">
+          <!-- Search Bar -->
+          <div class="search-bar">
+            <input
+              type="text"
+              id="song-search"
+              placeholder="Enter song number (e.g., 001)"
+            />
+            <button id="add-to-queue">Add to Queue</button>
+          </div>
 
-        <!-- Video Player -->
-        <video id="karaoke-video" controls></video>
+          <!-- Video Player -->
+          <video id="karaoke-video" controls></video>
 
-        <!-- Song Queue -->
-        <div class="queue-container">
-          <h2>Queue</h2>
-          <ul id="song-queue"></ul>
-          <button id="play-next">Play Next</button>
-        </div>
-      </main>
+          <!-- Song Queue -->
+          <div class="queue-container">
+            <h2>Queue</h2>
+            <ul id="song-queue"></ul>
+            <button id="play-next">Play Next</button>
+            <button id="clear-queue" class="btn">Clear Queue</button>
+          </div>
+        </main>
+      </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

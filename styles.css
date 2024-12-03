@@ -188,4 +188,20 @@ body {
       height: auto; /* Maintain aspect ratio */
     }
   }
+  #clear-queue {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #clear-queue:hover {
+    background-color: #cc0000;
+  }
   

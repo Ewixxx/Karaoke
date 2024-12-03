@@ -19,6 +19,7 @@ const karaokeVideo = document.getElementById("karaoke-video");
 const addToQueueButton = document.getElementById("add-to-queue");
 const songSearchInput = document.getElementById("song-search");
 const playNextButton = document.getElementById("play-next");
+const clearQueueButton = document.getElementById("clear-queue");
 
 // Song queue array
 let songQueue = [];
@@ -89,9 +90,19 @@ karaokeVideo.addEventListener("ended", () => {
   }
 });
 
+// Clear the song queue
+function clearQueue() {
+  songQueue = []; // Empty the queue array
+  updateQueue(); // Update the queue display
+  karaokeVideo.pause(); // Stop any currently playing video
+  karaokeVideo.src = ""; // Clear the video source
+  isPlaying = false; // Reset the playing state
+}
+
 // Add event listeners
 addToQueueButton.addEventListener("click", addSongToQueue);
 playNextButton.addEventListener("click", playNextSong);
+clearQueueButton.addEventListener("click", clearQueue);
 
 // Allow pressing Enter to add a song to the queue
 songSearchInput.addEventListener("keypress", (event) => {
