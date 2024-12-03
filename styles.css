@@ -21,6 +21,7 @@ body {
   
   .karaoke-container {
     display: flex;
+    flex-wrap: wrap; /* Adjusts for smaller screens */
     width: 90%;
     max-width: 1200px;
     margin: 20px auto;
@@ -33,6 +34,7 @@ body {
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 280px; /* Ensures the sidebar fits on smaller screens */
   }
   
   .song-list h2 {
@@ -103,15 +105,18 @@ body {
   #play-next:hover {
     background: #0056b3;
   }
+  
   .search-bar {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0;
+    width: 100%;
   }
   
   #song-search {
-    width: 300px;
+    width: 70%; /* Adjust for smaller screens */
+    max-width: 400px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
@@ -138,4 +143,49 @@ body {
   #add-to-queue:hover {
     background-color: #0056b3;
   }
-    
+  
+  /* Responsive design for tablets and smaller screens */
+  @media (max-width: 768px) {
+    .karaoke-container {
+      flex-direction: column; /* Stack elements */
+      align-items: center;
+    }
+  
+    .song-list, .player-container {
+      width: 100%; /* Take full width */
+    }
+  
+    #song-search {
+      width: 80%; /* Expand search bar */
+    }
+  }
+  
+  /* Mobile-specific adjustments */
+  @media (max-width: 480px) {
+    header {
+      font-size: 1.2rem;
+      padding: 10px;
+    }
+  
+    .song-list li {
+      font-size: 0.9rem;
+      padding: 5px;
+    }
+  
+    #song-search {
+      width: 100%; /* Full width for mobile */
+      border-radius: 5px;
+      margin-bottom: 10px; /* Add spacing for the button */
+    }
+  
+    #add-to-queue {
+      width: 100%;
+      border-radius: 5px;
+    }
+  
+    video {
+      max-width: 100%;
+      height: auto; /* Maintain aspect ratio */
+    }
+  }
+  
