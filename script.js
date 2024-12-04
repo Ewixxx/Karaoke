@@ -25,10 +25,19 @@ const clearQueueButton = document.getElementById("clear-queue");
 let songQueue = [];
 let isPlaying = false; // Track if a song is currently playing
 
-// Populate the static song list
+// Populate the static song list and add click functionality
 songs.forEach((song) => {
   const li = document.createElement("li");
   li.textContent = `${song.id} - ${song.title}`;
+  li.addEventListener("click", () => {
+    songQueue.push(song); // Add the song to the queue
+    updateQueue();
+
+    // If no song is playing, start the first song in the queue
+    if (!isPlaying) {
+      playNextSong();
+    }
+  });
   songListElement.appendChild(li);
 });
 
